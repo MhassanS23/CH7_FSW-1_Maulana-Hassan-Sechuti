@@ -23,4 +23,16 @@ describe("POST /v1/cars", () => {
             expect(res.statusCode).toBe(201);
         });
     })
+
+    it("Create data cars FAILED: Unauthorized", async () => {
+        const payload = {
+            name: "pajero",
+            price: 20000,
+            size: "SMALL",
+            image: "https://source.unsplash.com/506x506"
+        }
+        return await request(app).post("/v1/cars").send(payload).then((res) => {
+            expect(res.statusCode).toBe(401);
+        });
+    })
 })
