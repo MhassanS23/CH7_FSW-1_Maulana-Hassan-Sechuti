@@ -16,13 +16,13 @@ describe("DELETE /v1/cars/:id",() => {
 
     it("Delete data cars success response with 200 as status code", async () => {
 
-        return await request(app).delete("/v1/cars/84").set("Authorization", `Bearer ${jwtTokenAdmin}`).then((res) => {
+        return await request(app).delete("/v1/cars/83").set("Authorization", `Bearer ${jwtTokenAdmin}`).then((res) => {
             expect(res.statusCode).toBe(204);
         });
     });
 
     it("Delete data cars FAILED: Unauthorized", async () => {
-        return await request(app).delete("/v1/cars/84").then((res) => {
+        return await request(app).delete("/v1/cars/83").then((res) => {
             expect(res.statusCode).toBe(401);
         });
     })

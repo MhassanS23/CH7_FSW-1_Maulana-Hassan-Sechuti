@@ -19,7 +19,7 @@ describe("POST /v1/cars/:id/rent",() => {
             rentStartedAt: "2023-05-29 08:12:40.519+07"
         }
 
-        return await request(app).post("/v1/cars/20/rent").set("Authorization", `Bearer ${jwtTokenCustomer}`).send(payloadRent).then((res) => {
+        return await request(app).post("/v1/cars/30/rent").set("Authorization", `Bearer ${jwtTokenCustomer}`).send(payloadRent).then((res) => {
             expect(res.statusCode).toBe(201);
         });
     });
