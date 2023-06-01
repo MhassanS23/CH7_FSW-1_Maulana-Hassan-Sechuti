@@ -1,6 +1,8 @@
 const request = require("supertest");
 const app = require ("../../../../app");
 
+jest.useFakeTimers('legacy')
+
 describe("PUT /v1/cars/:id",() => {
     let jwtTokenAdmin = ''
     beforeAll(async () => {

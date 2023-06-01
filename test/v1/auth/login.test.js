@@ -1,6 +1,8 @@
 const request = require("supertest");
 const app = require ("../../../app");
 
+jest.useFakeTimers('legacy')
+
 describe("LOGIN /v1/auth/login",() => {
 
     it("Login user success response with 201 as status code", async () => {

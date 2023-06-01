@@ -1,6 +1,7 @@
 const request = require("supertest");
 const app = require ("../../../../app");
 
+jest.useFakeTimers('legacy')
 
 describe("GET /v1/cars/:id", () => {
     it("Get cars succes response with 200 as status code", async ()=> {

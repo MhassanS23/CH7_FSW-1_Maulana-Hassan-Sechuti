@@ -1,6 +1,8 @@
 const request = require("supertest");
 const app = require ("../../../app");
 
+jest.useFakeTimers('legacy')
+
 describe("GET /v1/auth/whoami",() => {
     let jwtTokenUser = ''
     beforeAll(async () => {

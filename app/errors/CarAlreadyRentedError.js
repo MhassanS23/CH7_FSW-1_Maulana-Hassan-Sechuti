@@ -1,12 +1,13 @@
 const ApplicationError = require("./ApplicationError");
 
 class CarAlreadyRentedError extends ApplicationError {
-  constructor(car) {
-    super(`${car.name} is already rented!!`);
+  constructor(data) {
+    super(`${data.name} is already rented!!`);
+    this.car = data;
   }
 
   get details() {
-    return { car }
+    return { car: this.car }
   }
 }
 
